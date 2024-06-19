@@ -1,10 +1,15 @@
 //importaciones de react
-import React from 'react'
+import React, { useState } from 'react'
 
 const Form1 = () => {
+    const [Nombre, setNombre] = useState("")
+    const [Appaterno, setAppaterno] = useState("")
+    const [Apmaterno, setApmaterno] = useState("")
+    const [Fnac, SetFnac] = useState("")
+    const [Edocivil, setEdocivil] = useState("Soltero")
     return (
         <>
-            <div>
+            <div >
                 {/* Navbar */}
                 <nav className="main-header navbar navbar-expand-md navbar-light navbar-white">
                     <div className="container">
@@ -187,28 +192,65 @@ const Form1 = () => {
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-6">
-                                    <div className="card">
-                                        <div className="card-body">
-                                            <h5 className="card-title">Card title</h5>
-                                            <p className="card-text">
-                                                Some quick example text to build on the card title and make up the bulk of the card's
-                                                content.
-                                            </p>
-                                            <a href="#" className="card-link">Card link</a>
-                                            <a href="#" className="card-link">Another link</a>
-                                        </div>
-                                    </div>
+                                    
                                     <div className="card card-primary card-outline">
+                                        <div className="card-header">
+                                            <h5 className="card-title">Datos personales</h5>
+                                        </div>
+
                                         <div className="card-body">
-                                            <h5 className="card-title">Card title</h5>
-                                            <p className="card-text">
-                                                Some quick example text to build on the card title and make up the bulk of the card's
-                                                content.
-                                            </p>
-                                            <a href="#" className="card-link">Card link</a>
-                                            <a href="#" className="card-link">Another link</a>
+                                            <div className="form-group">
+                                                <label>Nombre(s)</label>
+                                                <input 
+                                                    type="text" 
+                                                    className="form-control" 
+                                                    placeholder="Nombre(s)" 
+                                                    value={ Nombre }
+                                                    onChange={e => setNombre(e.target.value)}
+                                                />
+                                            </div>
+                                        
+                                        
+                                            <div className="form-group">
+                                                <label>Apellido Paterno</label>
+                                                <input type="text" className="form-control" placeholder="Apellido paterno" />
+                                            </div>
+                                       
+ 
+                                            <div className="form-group">
+                                                <label>Apellido Materno</label>
+                                                <input type="text" className="form-control" placeholder="Apellido materno" />
+                                            </div>
+                                        
+
+                                            <div className="form-group">
+                                                <label>Fecha de nacimiento</label>
+                                                <input type="date" className="form-control" placeholder="Fecha de nacimiento" />
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label className="form-check-label">Estado civil</label>
+                                                <div className="form-check">
+                                                    <input type="radio" name="checks" className="form-check-input" />
+                                                    <label> Soltero(a)</label>
+                                                </div>
+                                                <div className="form-check">
+                                                    <input type="radio" name="checks" className="form-check-input" />
+                                                    <label>Casado(a)</label>
+                                                </div>
+                                                <div className="form-check">
+                                                    <input type="radio" name="checks" className="form-check-input" />
+                                                    <label>Divorciado(a)</label>
+                                                </div>
+                                                <div className="form-check">
+                                                    <input type="radio" name="checks" className="form-check-input" />
+                                                    <label>Otro</label>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>{/* /.card */}
+
                                 </div>
                                 {/* /.col-md-6 */}
                                 <div className="col-lg-6">
