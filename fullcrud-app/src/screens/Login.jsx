@@ -1,8 +1,41 @@
 //importaciones de react
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const Login = () => {
+    const getUsuarios = async() => {
+        const url = "http://127.0.0.1:8080/usuarios"
+        const request = await fetch(url,{
+            method: "Get",
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+            })
+        });
+        console.log(request)
+    }
+
+    const setUsuarios = async() => {
+        const url = "http://127.0.0.1:8080/usuarios"
+        const request = await fetch(url,{
+            method: "POST",
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+            }),
+            body: JSON.stringify({
+                "usuario":"Jeronimo",
+                "contrasena":"12345"
+            })
+        });
+        console.log(request)
+    }
+
+    useEffect(() => {
+        getUsuarios()
+    }, []);
+
     return (
         <>
             <div className="login-box">
@@ -50,8 +83,8 @@ const Login = () => {
                             <a href="#" className="btn btn-block btn-primary">
                                 <i className="fab fa-facebook mr-2" /> Sign in using Facebook
                             </a>
-                            <a href="#" className="btn btn-block btn-danger">
-                                <i className="fab fa-google-plus mr-2" /> Sign in using Google+
+                            <a href="#" className="btn btn-block btn-danger" onClick={() => setUsuarios}>
+                                <i className="fab fa-google-plus mr-2" /> Add user
                             </a>
                         </div>
                         {/* /.social-auth-links */}
