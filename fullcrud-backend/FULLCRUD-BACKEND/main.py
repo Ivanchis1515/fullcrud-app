@@ -73,7 +73,7 @@ def getUsuarioByUsuarioContraseña(user:Usuario):
         else:
             return {"status":"error", "msg":"Usuario no encontrado"}
     except:
-        return {"status":"error". "msg":"ocurrio un error en la consulta"}
+        return {"status":"error", "msg":"ocurrio un error en la consulta"}
 
 @app.post("/usuarios")
 def setUsuario():

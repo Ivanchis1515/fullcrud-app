@@ -37,7 +37,7 @@ const Login = () => {
     }, []);
 
     return (
-        <>
+        <div className="login-page">
             <div className="login-box">
                 {/* /.login-logo */}
                 <div className="card card-outline card-primary">
@@ -74,7 +74,7 @@ const Login = () => {
                                 </div>
                                 {/* /.col */}
                                 <div className="col-4">
-                                    <Link to="Form1" className="btn btn-primary btn-block">Sign In</Link>
+                                    <Link to="/Form1" className="btn btn-primary btn-block">Sign In</Link>
                                 </div>
                                 {/* /.col */}
                             </div>
@@ -100,7 +100,7 @@ const Login = () => {
                 {/* /.card */}
             </div>
             {/* /.login-box */}
-        </>
+        </div>
     )
 }
 
