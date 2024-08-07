@@ -5,14 +5,13 @@ import PropTypes from 'prop-types';
 const Simple = ({titulo, subtitulo, nombre}) => {
     return (
         <>
-            <h1>{ titulo }</h1>
+            <h1 data-testid="test-title">{ titulo }</h1>
+            <h4>{ subtitulo }</h4>
             <h4>{ subtitulo }</h4>
             <p>{ nombre }</p>
         </>
     )
 }
-
-export default Simple
 
 Simple.PropTypes = {
     titulo: PropTypes.string.isRequired,
@@ -20,3 +19,4 @@ Simple.PropTypes = {
     nombre: PropTypes.string,
 
 }
+export default Simple
